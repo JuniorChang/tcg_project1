@@ -1,0 +1,47 @@
+@media only screen and (max-width: 600px) {
+    #top2 {
+      display: none;
+    }
+    
+
+body {
+    
+    font-size: large;
+}
+
+h1{
+    text-align: center;
+}
+#top1 {
+    margin: 0;
+    padding: 0;
+}
+
+#top2{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+/* NAV BAR POSITION NOT WORKING , KIV */
+/* .navbar{
+    position: fixed;
+    width: 100%;    
+} */
+
+.navbar-nav {
+    color: red;
+}
+
+#Nav1 {
+    justify-content: center;
+}
+
+#about-us-text{
+    margin: 50px;
+    border-left: 50px;
+}
+
+
