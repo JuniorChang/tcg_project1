@@ -11,4 +11,4 @@ List of fucntions added to the project
     -Linked different sections of the page
     -Added some media query for mobile view
     -Updated About Us 
-    
+    -Added map and script.js
