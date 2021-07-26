@@ -31,9 +31,7 @@ h1{
     width: 100%;    
 } */
 
-.navbar-nav {
-    color: red;
-}
+
 
 #Nav1 {
     justify-content: center;
@@ -58,3 +56,27 @@ h1{
 #weight{
     max-width: 100px;
 }
+
+/* #carouselExampleCaptions{
+    /* max-width: 80vw; */
+    /* padding-left: 10vw;
+    padding-right: 10vw;
+    
+    min-height: 50px;
+    max-height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.carousel-control-prev{
+    position: absolute;
+    top: 500px;
+    left: 50px;
+}
+
+.carousel-control-next{
+    position: absolute;
+    top: 500px;
+    right: 50px;
+} */ */
+

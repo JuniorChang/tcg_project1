@@ -42,11 +42,25 @@ navigator.geolocation.getCurrentPosition(position => {
     const lon = position.coords.longitude;
     document.getElementById('latitude').textContent = lat;
     document.getElementById('longitude').textContent = lon;
-    const popup = L.popup()
-        .setLatLng([lat,lon])
+    let popup = L.popup()
+        .setLatLng([lat, lon])
         .setContent("Your location.")
         .openOn(map);
 });
+
+
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'assets/gyms-sg-geojson.geojson');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.responseType = 'json';
+xhr.onload = function() {
+    if (xhr.status !== 200) return
+    L.geoJSON(xhr.response).addTo(map);
+};
+xhr.send();
+
+
 
 
 
