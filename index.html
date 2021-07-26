@@ -109,9 +109,30 @@
 
   <!-- Find Gym -->
 
-  
   <div id="Find-gym">
     <h1> Find a Gym</h1>
+    <!-- Getting User location -->
+    <script>
+      if ('geolocation' in navigator) {
+        // geolocation is available
+        console.log('geolocation is available');
+        navigator.geolocation.getCurrentPosition(position => {
+          console.log(position.coords);
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          document.getElementById('latitude').textContent = lat;
+          document.getElementById('longitude').textContent = lon;
+        });
+      } else {
+        // geolocation is not available
+        console.log('geolocation is not available');
+      }
+    </script>
+
+    <!-- Telling user their current -->
+    <p> Your Current location is: <br> latitude: <span id="latitude"></span>&deg;<br />
+      longitude: <span id="longitude"></span>&deg;</p>
+
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
       integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
