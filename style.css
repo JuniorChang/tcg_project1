@@ -3,15 +3,92 @@
       display: none;}
     }
 
+html{
+    height: 100%;
+}
+
+.container{
+    padding-top: 70px;
+    padding-bottom: 225px;
+}
+
+.aboutUsTitle {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+  }
+.aboutUsTitle::after {
+  background: #fdb801 none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 134px;
+}
+
+  .aboutUsImages{
+      height: 240px;
+  }
+
+  .sideText{
+      font-style: italic;
+  }
+
+#navLogo{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.buttonClass {
+    margin-top: 25px;
+    
+}
+
+.results-title {
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 32px;
+    margin: 0 0 39px;
+    padding: 0 0 11px;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+.results-title::after {
+    background: #fdb801 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 110px;
+}
+
+.bmi-image{
+    height:350px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 body {
     
     font-size: large;
 }
 
-h1{
-    text-align: center;
-}
+
+
+
 #top1 {
     margin: 0;
     padding: 0;
@@ -22,15 +99,6 @@ h1{
     padding: 0;
     
 }
-
-
-
-/* NAV BAR POSITION NOT WORKING , KIV */
-/* .navbar{
-    position: fixed;
-    width: 100%;    
-} */
-
 
 
 #Nav1 {
@@ -57,26 +125,16 @@ h1{
     max-width: 100px;
 }
 
-/* #carouselExampleCaptions{
-    /* max-width: 80vw; */
-    /* padding-left: 10vw;
-    padding-right: 10vw;
-    
-    min-height: 50px;
-    max-height: 50px;
-        margin-left: auto;
-        margin-right: auto;
+#btmText {
+    color: white;
+    background-color: black;
 }
 
-.carousel-control-prev{
-    position: absolute;
-    top: 500px;
-    left: 50px;
+#footer{
+    position: fixed;
+    padding 10px 10px 10px 10px;
+    bottom: 0;
+    height: 40px;
+    width: 100vw;
+    background: grey;
 }
-
-.carousel-control-next{
-    position: absolute;
-    top: 500px;
-    right: 50px;
-} */ */
-

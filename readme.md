@@ -12,3 +12,17 @@ List of fucntions added to the project
     -Added some media query for mobile view
     -Updated About Us 
     -Added map and script.js
+
+
+1st Aug 2021
+
+
+
+
+References
+
+Dumbbell image
+https://www.iconexperience.com/g_collection/icons/?icon=dumbbell
+
+BMI information
+https://www.everydayhealth.com/heart-failure/living-with/bad-news-if-your-bmi-is-high-fat-causes-heart-failure/

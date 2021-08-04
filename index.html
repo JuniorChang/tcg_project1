@@ -13,7 +13,7 @@
   <title>Let's get fit</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="https://picsum.photos/16/16">
+  <link rel="shortcut icon" href="assets/images/dumbbell.png">
 
   <!-- Map data links -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -26,23 +26,11 @@
 
 <body id="body">
 
-  <!-- Top banner -->
-  <div class="container-fluid" class="d-flex justify-content-center" id="top">
-    <div class="row">
-      <div class="col-12 col-md-12 col-lg-4" id="top1">
-        <img src="http://picsum.photos/250/250">
-      </div>
-      <div class="col-12 col-md-12 col-lg-8" id="top2">
-        <img src="http://picsum.photos/800/250">
-      </div>
-    </div>
-  </div>
-
   <!-- Nav Bar  -->
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="container-fluid" id="Nav1">
-        <a class="navbar-brand"> <img src="http://picsum.photos/40/40"></a>
+        <a class="navbar-brand"> <img id="navLogo" src="assets/images/biceps_002.jpg"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -70,159 +58,226 @@
     </nav>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
   <!-- About US -->
-  <div id="About-Us">
-    <h1>About Us</h1>
-    <div id="about-us-text">
-      <p>
-        Let's get fit aims to provide a guide to all individuals who are looking for a place to workout, or looking to
-        get some equipments to workout at home
-      </p>
-      <p>Our simple to use Bmi calculator will show you your current BMI, simply enter your height in metres and weight
-        in kilograms</p>
-      <P>Then head over to our interactive maps where we will show you some gyms that are in your area</P>
-      <p>Alternatively, if you prefer to buy some sporting equipements, jump over to the next section where we show you
-        some of the best and latest exercising equipments</p>
-    </div>
-  </div>
-
-  <!-- Calculate your BMI -->
-  <div id="Calculate-bmi">
-    <h1> Calculate Your BMI</h1>
-    <form>
-      <div class="mb-3">
-        <label for="weightInput" class="form-label">Enter your weight in Kg</label>
-        <input type="weight" class="form-control" id="weight" aria-describedby="weight">
+  <div id="About-Us" class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="aboutUs">
+          <img src="assets/images/logo.jpg" class="aboutUsImages">
+          <h2 class="aboutUsTitle">
+            About Us
+          </h2>
+          <p class="aboutUsText">
+            Find out your BMI, your nearest gym and home equipments
+          </p>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="heightInput" class="form-label">Enter your height in meters</label>
-        <input type="height" class="form-control" id="height">
-      </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
+      <div class="col-md-6 col-sm-6 col-xs-12 mt-md-5">
+        <div class="feature">
+          <div class="featureBox">
+            <div class="clearFix">
+              <div class="featureContent">
+                <h4> BMI Calculator</h4>
+                <p class="sideText"> Use our BMI calculator to find out your BMI. Simply enter your height in meters and
+                  weight in
+                  kilograms</p>
 
-  <!-- Find Gym -->
-  <div id="Find-gym">
-    <h1> Find a Gym</h1>
-
-    <!-- setting up the map -->
-    <div id="map"></div>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-      crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="script.js"></script>
-    <script> console.log("Map is loaded");</script>
-
-
-
-    <!-- Getting User location -->
-    <script>
-      if ('geolocation' in navigator) {
-        // geolocation is available
-        console.log('geolocation is available');
-        navigator.geolocation.getCurrentPosition(position => {
-          console.log(position.coords);
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          document.getElementById('latitude').textContent = lat;
-          document.getElementById('longitude').textContent = lon;
-        });
-      } else {
-        // geolocation is not available
-        console.log('geolocation is not available');
-      }
-    </script>
-
-    <!-- Telling user their current -->
-    <p> Your Current location is: <br> latitude: <span id="latitude"></span>&deg;<br />
-      longitude: <span id="longitude"></span>&deg;</p>
-
-
-  </div>
-
-
-
-
-
-  <!-- Find Equipment -->
-  <div id="Find-equipment">
-    <h1> Find Equipment</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active carouImage">
-                <img src="http://picsum.photos/500/550" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item carouImage">
-                <img src="http://picsum.photos/500/550" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                </div>
-              </div>
-              <div class="carousel-item carouImage">
-                <img src="http://picsum.photos/500/550" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+          <div class="featureBox">
+            <div class="clearFix">
+              <div class="featureContent">
+                <h4> Find a Gym</h4>
+                <p class="sideText"> Head over to our maps and we will show you the nearest gym at your area
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="featureBox">
+            <div class="clearFix">
+              <div class="featureContent">
+                <h4> Find Equipments</h4>
+                <p class="sideText">If you prefer to stay at home, learn how to use some common equipments at the
+                  comfort
+                  of your home</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Calculate your BMI -->
+      <div id="Calculate-bmi" class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <h2> Calculate Your BMI</h2>
+            <div class="bmiCalculator">
+              <form>
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Enter your weight in KG</label>
+                  <input type="text" class="form-control" id="weight" placeholder="65">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Enter your height in Meters</label>
+                  <input type="text" class="form-control" id="height" placeholder="1.7">
+                </div>
+                <button type="button" class="btn btn-primary buttonClass" onclick="bmi()"> Calculate</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <h2 class="results-title mt-4 mt-md-0 mt-xl-0 mt-lg-0"> Results</h2>
+            <label for="formGroupExampleInput">Your Bmi is......</label>
+            <input class="form-control" id="BmiResult" rows='3' placeholder="Results..."></input>
+            <img class="bmi-image" id="bmi-image">
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Find Gym -->
+      <div id="Find-gym">
+        <h1> Find a Gym</h1>
+
+        <!-- setting up the map -->
+        <div id="map"></div>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin=""></script>
+        <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster-src.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="script.js"></script>
+        <script> console.log("Map is loaded");</script>
+
+
+
+        <!-- Getting User location -->
+        <script>
+          if ('geolocation' in navigator) {
+            // geolocation is available
+            console.log('geolocation is available');
+            navigator.geolocation.getCurrentPosition(position => {
+              console.log(position.coords);
+              const lat = position.coords.latitude;
+              const lon = position.coords.longitude;
+              document.getElementById('latitude').textContent = lat;
+              document.getElementById('longitude').textContent = lon;
+              let popup = L.popup()
+                .setLatLng([lat, lon])
+                .setContent("Your location.")
+                .openOn(map);
+            });
+          } else {
+            // geolocation is not available
+            console.log('geolocation is not available');
+          }
+        </script>
+
+        <!-- Telling user their current -->
+        <!-- <p> Your Current location is: <br> latitude: <span id="latitude"></span>&deg;<br />
+      longitude: <span id="longitude"></span>&deg;</p> -->
+
+
+      </div>
+
+
+
+
+
+      <!-- Find Equipment -->
+      <div id="Find-equipment" class="container-fluid" style="padding-top: 70px; padding-bottom: 70px">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <h2 class="feq-title">Find Equipment</h2>
+
+            <div class="row">
+              <div class="col-lg-4 col-12 text-center">
+                <div class="box-column">
+                  <div class="box-top">
+                    <img src="assets/images/dumbbell2.jpg" alt="">
+                  </div>
+                  <div class="box-bottom">
+                    <div class="box-title">
+                      Dumbells
+                    </div>
+                    <div class="box-text">
+                      Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta
+                      ocurreret qui ad.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-12 text-center">
+                <div class="box-column">
+                  <div class="box-top">
+                    <img src="assets/images/threadmill.jpg" alt="">
+                  </div>
+                  <div class="box-bottom">
+                    <div class="box-title">
+                      Threadmill
+                    </div>
+                    <div class="box-text">
+                      Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta
+                      ocurreret qui ad.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-12 text-center">
+                <div class="box-column">
+                  <div class="box-top">
+                    <img src="assets/images/skipping rope.jpg" alt="">
+                  </div>
+                  <div class="box-bottom">
+                    <div class="box-title">
+                      Skipping Ropes
+                    </div>
+                    <div class="box-text">
+                      Lorem ipsum dolor sit amet, id quo eruditi eloquentiam. Assum decore te sed. Elitr scripta
+                      ocurreret qui ad.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-
-  </div>
-
+    <div id="footer"> THIS IS A FOOTER PLACEHOLDER</div>
 
 
-  <!-- Optional JavaScript; choose one of the two! -->
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-    crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"></script>
 
 </body>
 
