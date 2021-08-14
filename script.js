@@ -50,13 +50,38 @@ navigator.geolocation.getCurrentPosition(position => {
 
 
 
+
 let xhr = new XMLHttpRequest();
 xhr.open('GET', 'assets/gyms-sg-geojson.geojson');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.responseType = 'json';
-xhr.onload = function() {
+xhr.onload = function () {
     if (xhr.status !== 200) return
-    L.geoJSON(xhr.response).addTo(map);
+    // L.geoJSON(xhr.response).bindPopup("<p>Singapore</p>").addTo(map);
+    L.geoJson(xhr.response, {
+        onEachFeature: function (feature, layer) {
+            // console.log(feature.properties.Description);
+            layer.bindPopup(feature.properties.Description);
+            let e = document.createElement('div');
+            e.innerHTML = feature.properties.Description;
+            let tds = e.querySelectorAll('td');
+            let region = tds[13].innerHTML;
+            let department = tds[10].innerHTML;
+            let name = tds[8].innerHTML;
+            layer.bindPopup(`<div>
+                  <p>
+                       Name: ${region}
+                  </p>
+                  <p>
+                        Street Name: ${name}
+                        </p>
+
+                  <p>
+                       Description: ${department}
+                  </p>
+               </div>`);
+        }
+    }).addTo(map);
 };
 xhr.send();
 
@@ -64,28 +89,30 @@ xhr.send();
 
 
 
-function bmi(){
-    let bmi =0
+
+// Bmi calculator
+function bmi() {
+    let bmi = 0
     let h = 0
     let w = 0
     h = document.getElementById("height").value;
     w = document.getElementById("weight").value;
-    bmi = w / ( h * h);
+    bmi = w / (h * h);
     document.getElementById("BmiResult").value = bmi.toFixed(2);
-    if (bmi >= 35 ) {
-        document.getElementById("bmi-image").src="assets/images/extremely obese.jpg";
+    if (bmi >= 35) {
+        document.getElementById("bmi-image").src = "assets/images/extremely obese.jpg";
         console.log("Extremely Obese");
-    } else if (bmi >=30 && bmi <35) {
-        document.getElementById("bmi-image").src="assets/images/obese.jpg";
+    } else if (bmi >= 30 && bmi < 35) {
+        document.getElementById("bmi-image").src = "assets/images/obese.jpg";
         console.log("Obese");
-    } else if (bmi >= 25 && bmi < 29.9){
-        document.getElementById("bmi-image").src="assets/images/overweight.jpg";
+    } else if (bmi >= 25 && bmi < 29.9) {
+        document.getElementById("bmi-image").src = "assets/images/overweight.jpg";
         console.log("Overweight");
-    } else if (bmi >=18.5 && bmi < 25){
-        document.getElementById("bmi-image").src="assets/images/normal.jpg";
+    } else if (bmi >= 18.5 && bmi < 25) {
+        document.getElementById("bmi-image").src = "assets/images/normal.jpg";
         console.log("Normal Range");
     } else {
-        document.getElementById("bmi-image").src="assets/images/underweight.jpg";
+        document.getElementById("bmi-image").src = "assets/images/underweight.jpg";
         console.log("Underweight");
     }
     console.log(bmi)
