@@ -1,3 +1,12 @@
+<h1> Finding gyms in Singapore<h1>
+
+By: Chang Jia Le
+
+<h1> Project can be found here
+
+
+
+
 List of fucntions added to the project
 
 
