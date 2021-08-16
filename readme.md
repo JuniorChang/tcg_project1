@@ -1,8 +1,8 @@
-<h1> Finding gyms in Singapore<h1>
+<h1> Finding gyms in Singapore</h1>
 
-By: Chang Jia Le
+<p>By: Chang Jia Le </p>
 
-<h1> Project can be found here
+<h1> Project can be found here </h1>
 
 
 
