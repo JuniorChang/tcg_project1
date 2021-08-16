@@ -26,3 +26,8 @@ https://www.iconexperience.com/g_collection/icons/?icon=dumbbell
 
 BMI information
 https://www.everydayhealth.com/heart-failure/living-with/bad-news-if-your-bmi-is-high-fat-causes-heart-failure/
+
+Error Pic
+https://www.shutterstock.com/search/error+screen
+
+https://www.cleanpng.com/png-dumbbell-computer-icons-weight-training-clip-art-d-733537/

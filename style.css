@@ -133,8 +133,16 @@ body {
 #footer{
     position: fixed;
     padding 10px 10px 10px 10px;
-    bottom: 0;
-    height: 40px;
+    bottom: 10px;
+    height: 60px;
     width: 100vw;
-    background: grey;
+    background: lightblue;
+    font-family: 'Style Script', cursive;
 }
+
+.box-top{
+    max-height: 300px;
+    min-height: 250px;
+    margin-bottom: 150px;
+}
+
