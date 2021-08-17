@@ -5,7 +5,7 @@
 
 <h1> Project can be found <a href="https://github.com/JuniorChang/tcg_project1">HERE </a> </h1>
 <p> Screenshot of project </p>
-<img src="..assets/images/Screenshot.png">
+<img src="assets\images\Screenshot.png">
 
 
 <h1> Gym Locator </h1>
